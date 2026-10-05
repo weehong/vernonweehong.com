@@ -1,126 +1,32 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 import {
 	ContactForm,
 	PortfolioEffects,
 	ThemeToggle,
 } from "@/components/portfolio-interactions";
+import { pageMetadata } from "@/lib/metadata";
+import {
+	awards,
+	education,
+	experience,
+	featuredProject,
+	formatPeriod,
+	otherProjects,
+	skills,
+	socialLinks,
+} from "@/lib/profile";
 import { siteConfig } from "@/lib/site-config";
+import { buildGraph, getProfilePageNode } from "@/lib/structured-data";
 
 const navigation = ["about", "experience", "projects", "skills", "background"];
 
-const socialLinks = [
-	{ label: "GitHub", short: "GH", href: "https://github.com/weehong" },
-	{
-		label: "LinkedIn",
-		short: "IN",
-		href: "https://www.linkedin.com/in/weehongkoh/",
-	},
-	{
-		label: "YouTube",
-		short: "YT",
-		href: "https://www.youtube.com/@weehongayden90",
-	},
-];
-
-const experience = [
-	{
-		period: "2020 - CURRENT · SINGAPORE",
-		role: "Full-Stack Software Engineer",
-		company: "DBS Bank",
-		achievements: [
-			"Architected the YFJ platform APIs for India and Taiwan, retiring one-off regional integrations in favour of reusable Java/Spring Boot services with versioned contracts and market-specific auth and access control for a dual-market rollout.",
-			"Modernized reporting services to cut APAC setup effort by 30% and compress financial-document turnaround from hours to seconds, delivering one-click localized report APIs and folding Kofax digital-signature flows into automated pipelines.",
-			"Engineered production-grade backend integrations for staff-assisted product journeys, wiring internal banking REST APIs into existing session and control patterns, then hardening delivery with automated regression, peer review and phased rollout inside a regulated environment.",
-			"Standardized service-consumption patterns now adopted by 5+ teams, cutting duplicated implementation across squads.",
-		],
-		tags: [
-			"Java",
-			"Spring Boot",
-			"TypeScript",
-			"REST",
-			"API Design",
-			"Access Control",
-			"Jaspersoft",
-			"Cloudflare",
-		],
-	},
-	{
-		period: "2018 - 2020 · SINGAPORE",
-		role: "Fullstack Developer",
-		company: "IPI Singapore",
-		achievements: [
-			"Accelerated operational responsiveness by 60% with a Go batch-processing backend that eliminated manual routing entirely, exposing explicit REST integration points so downstream teams could consume routed workloads reliably.",
-			"Built and operated the backend behind project tracking and invoicing, replacing fragmented email and spreadsheet coordination with a single system of record for status and billing.",
-			"Owned automation delivery from discovery to production handover - maintainable services and durable integration flows, not one-off scripts.",
-		],
-		tags: ["Golang", "REST", "Automation", "Backend Services"],
-	},
-	{
-		period: "2017 - 2018 · SINGAPORE",
-		role: "Fullstack Developer",
-		company: "Blissbox",
-		achievements: [
-			"Architected and launched a Laravel commerce backend on Google Cloud with Stripe payment processing and MySQL persistence, transacting reliably from go-live.",
-			"Delivered in 3 months and sustained 99.9% uptime while fully digitizing the client's sales and payment path.",
-			"Set roadmap priorities directly with business owners across feature delivery, payment flows and uptime targets.",
-		],
-		tags: ["Laravel", "MySQL", "Google Cloud", "Stripe"],
-	},
-	{
-		period: "2015 - 2017 · SINGAPORE",
-		role: "Web Developer",
-		company: "WizWerx",
-		achievements: [
-			"Delivered PHP-backed web solutions aligned to client branding and conversion goals, with maintainable templates and production-ready content pipelines.",
-			"Scoped and executed projects from requirements through go-live, shipping dependable SEO-oriented pages on timeline and improving delivery predictability for SME clients.",
-		],
-		tags: ["PHP", "WordPress", "SEO"],
-	},
-];
-
-const skills = [
-	{
-		title: "Programming Language",
-		items: ["Java", "TypeScript", "Golang", "C#", "Kotlin", "Swift"],
-	},
-	{
-		title: "Framework and Library",
-		items: [
-			"Spring Boot",
-			".NET Core",
-			"Laravel",
-			"Node.js",
-			"ReactJs",
-			"NextJs",
-		],
-	},
-	{
-		title: "Database and Storage",
-		items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "OpenSearch", "S3"],
-	},
-	{
-		title: "Tool and Service",
-		items: [
-			"Docker",
-			"Jenkins",
-			"SonarQube",
-			"CloudWatch",
-			"Cloudflare",
-			"Google Cloud",
-		],
-	},
-];
-
-export const metadata: Metadata = {
-	title: { absolute: siteConfig.name },
-	description: siteConfig.description,
-	alternates: { canonical: "/" },
-	openGraph: {
-		title: siteConfig.name,
-		description: siteConfig.description,
-		url: "/",
-	},
-};
+export const metadata: Metadata = pageMetadata({
+	title: { absolute: siteConfig.title },
+	path: "/",
+	ogType: "profile",
+});
 
 function SectionHeading({
 	eyebrow,
@@ -158,7 +64,7 @@ function SocialLinks(): React.ReactElement {
 					href={link.href}
 					aria-label={link.label}
 					target="_blank"
-					rel="noreferrer"
+					rel="me noreferrer"
 				>
 					{link.short}
 				</a>
@@ -170,6 +76,7 @@ function SocialLinks(): React.ReactElement {
 export default function Home(): React.ReactElement {
 	return (
 		<>
+			<JsonLd data={buildGraph(getProfilePageNode())} />
 			<PortfolioEffects />
 			<div className="portfolio-shell">
 				<div className="ambient ambient-mist" data-blob />
@@ -187,10 +94,8 @@ export default function Home(): React.ReactElement {
 						</div>
 						<div className="identity">
 							<h1 aria-label="Vernon Wee Hong KOH">
-								Vernon
-								<br />
-								Wee Hong
-								<br />
+								Vernon <br />
+								Wee Hong <br />
 								<span>KOH</span>
 							</h1>
 							<p className="role">Backend Engineer</p>
@@ -206,9 +111,9 @@ export default function Home(): React.ReactElement {
 							<a className="button button-primary" href="#contact">
 								Get in touch
 							</a>
-							<a className="button button-ghost" href="#contact">
+							<Link className="button button-ghost" href="/resume">
 								Resume
-							</a>
+							</Link>
 						</div>
 						<nav className="section-nav" aria-label="Portfolio sections">
 							{navigation.map((item, index) => (
@@ -234,9 +139,9 @@ export default function Home(): React.ReactElement {
 								that hold
 							</h2>
 							<p className="lead">
-								Singapore-based backend engineer. I architect and ship
-								production REST services, integration workflows and
-								regulated-market API platforms in APAC banking.
+								I&apos;m Vernon Koh, a Singapore-based backend engineer. I
+								architect and ship production REST services, integration
+								workflows and regulated-market API platforms in APAC banking.
 							</p>
 							<p>
 								I own backend work end to end - requirements, service design,
@@ -274,9 +179,9 @@ export default function Home(): React.ReactElement {
 									<article
 										className="card experience-card"
 										style={{ "--stack-i": index } as React.CSSProperties}
-										key={`${job.company}-${job.period}`}
+										key={`${job.company}-${String(job.startYear)}`}
 									>
-										<p className="period">{job.period}</p>
+										<p className="period">{formatPeriod(job)}</p>
 										<h3>
 											{job.role} <span>· {job.company}</span>
 										</h3>
@@ -298,58 +203,38 @@ export default function Home(): React.ReactElement {
 								className="card feature-card"
 								style={{ "--stack-i": 0 } as React.CSSProperties}
 							>
-								<div className="project-media" data-parallax-frame>
+								{/* Decorative placeholder until real app screenshots exist. */}
+								<div
+									className="project-media"
+									data-parallax-frame
+									aria-hidden="true"
+								>
 									<div data-parallax-img>
-										<span>Upmatches app screens</span>
+										<span>{featuredProject.name} app screens</span>
 									</div>
 								</div>
 								<div className="project-copy">
 									<div className="project-title">
-										<h3>Upmatches</h3>
-										<span>Solo build</span>
+										<h3>{featuredProject.name}</h3>
+										{featuredProject.label ? (
+											<span>{featuredProject.label}</span>
+										) : null}
 									</div>
-									<p>
-										Sole backend owner. Architected and maintain the shared REST
-										APIs powering web, Android and iOS clients for
-										Singapore&apos;s badminton scene - service design through
-										deployment, testing and production maintenance on one
-										platform, with stable endpoints for game discovery,
-										scheduling and organizer attendance workflows.
-									</p>
-									<Tags
-										items={[
-											"REST API",
-											"Service Design",
-											"API Contracts",
-											"Data Modeling",
-										]}
-									/>
+									<p>{featuredProject.description}</p>
+									<Tags items={featuredProject.tags} />
 								</div>
 							</article>
-							<article
-								className="card project-card"
-								style={{ "--stack-i": 1 } as React.CSSProperties}
-							>
-								<h3>Full-Text Search for PDFs on AWS</h3>
-								<p>
-									Production PDF full-text search backend in C# .NET Web API
-									using CQRS and Onion Architecture. Orchestrated document
-									extraction through SQS/SNS, persisted assets in S3 with
-									presigned URLs, and served fuzzy and faceted queries via
-									OpenSearch - with Cognito-backed auth, resilient retry workers
-									and CloudWatch observability holding it steady.
-								</p>
-								<Tags
-									items={[
-										"C# .NET",
-										"CQRS",
-										"Textract",
-										"OpenSearch",
-										"Cognito",
-										"CloudWatch",
-									]}
-								/>
-							</article>
+							{otherProjects.map((project, index) => (
+								<article
+									className="card project-card"
+									style={{ "--stack-i": index + 1 } as React.CSSProperties}
+									key={project.name}
+								>
+									<h3>{project.name}</h3>
+									<p>{project.description}</p>
+									<Tags items={project.tags} />
+								</article>
+							))}
 							<div className="stack-spacer" aria-hidden="true" />
 						</section>
 
@@ -374,35 +259,28 @@ export default function Home(): React.ReactElement {
 							<div className="background-list" data-stagger>
 								<div>
 									<h3>Awards</h3>
-									<div className="award">
-										<span>2019</span>
-										<a
-											href="https://www.dbs.com/NewsPrinter.page?newsId=k0u62hn2&locale=en"
-											target="_blank"
-											rel="noreferrer"
-										>
-											DBS Recognition for Outstanding Performance, DBS Paradigm
-											Shift Global Hackathon (Team 1206)
-										</a>
-									</div>
+									{awards.map((award) => (
+										<div className="award" key={award.title}>
+											<span>{award.year}</span>
+											<a href={award.url} target="_blank" rel="noreferrer">
+												{award.title}
+											</a>
+										</div>
+									))}
 								</div>
 								<hr />
 								<div>
 									<h3>Education</h3>
 									<div className="education-grid">
-										<div>
-											<span>2012 - 2014</span>
-											<strong>Campbell University</strong>
-											<p>B.S. in Information Technology · North Carolina</p>
-										</div>
-										<div>
-											<span>2012 - 2014</span>
-											<strong>Tunku Abdul Rahman University College</strong>
-											<p>
-												Advanced Diploma in Internet Technology cum BS Degree ·
-												Malaysia
-											</p>
-										</div>
+										{education.map((entry) => (
+											<div key={entry.school}>
+												<span>{entry.period}</span>
+												<strong>{entry.school}</strong>
+												<p>
+													{entry.credential} · {entry.location}
+												</p>
+											</div>
+										))}
 									</div>
 								</div>
 							</div>

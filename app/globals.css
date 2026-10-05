@@ -805,6 +805,167 @@ html.dark .theme-toggle span::before {
 	transform: none;
 }
 
+button.button {
+	border: 0;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.resume-shell {
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 48px 32px 96px;
+}
+.resume-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-bottom: 48px;
+}
+.resume {
+	display: flex;
+	flex-direction: column;
+	gap: 56px;
+}
+.resume-header {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid var(--hairline);
+}
+.resume-header h1 {
+	margin: 0;
+	font-family: var(--font-poppins);
+	font-size: clamp(2.25rem, 6vw, 3.5rem);
+	font-weight: 700;
+	line-height: 1.05;
+	letter-spacing: -0.03em;
+}
+.resume-header h1 span {
+	color: var(--brand);
+}
+.resume-role {
+	margin: 0;
+	color: var(--eyebrow);
+	font-family: var(--font-poppins);
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+.resume-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 24px;
+	margin: 8px 0 0;
+	padding: 0;
+	list-style: none;
+	font-family: var(--font-mono);
+	font-size: 0.8125rem;
+}
+.resume section {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.resume h2 {
+	margin: 0;
+	color: var(--eyebrow);
+	font-family: var(--font-mono);
+	font-size: 0.8125rem;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+.resume p,
+.resume li,
+.resume dd {
+	color: var(--ink-soft);
+}
+.resume p {
+	max-width: 70ch;
+	margin: 0;
+}
+.resume-entry + .resume-entry {
+	padding-top: 24px;
+	border-top: 1px solid var(--hairline);
+}
+/* Fixed left column (role, project, skill group) + details. */
+.resume-row {
+	display: grid;
+	grid-template-columns: 200px minmax(0, 1fr);
+	gap: 8px 32px;
+	align-items: start;
+}
+/* Details + right-aligned date (awards, education). */
+.resume-split {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 8px 24px;
+	align-items: baseline;
+}
+.resume-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.resume h3 {
+	margin: 0;
+	color: var(--ink);
+	font-family: var(--font-poppins);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	line-height: 1.35;
+}
+.resume .resume-company {
+	color: var(--ink);
+	font-weight: 500;
+}
+.resume .resume-dates {
+	margin: 0;
+	color: var(--ink-muted);
+	font-family: var(--font-mono);
+	font-size: 0.8125rem;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+.resume-highlights {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 0;
+	padding-left: 1.125rem;
+	list-style: disc;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+}
+.resume-highlights li::marker {
+	color: var(--ink-muted);
+}
+.resume-rows {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 0;
+}
+.resume-rows dt {
+	color: var(--ink);
+	font-weight: 600;
+}
+.resume-rows dd {
+	margin: 0;
+}
+.resume-updated {
+	color: var(--ink-muted) !important;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+}
+.print-only {
+	display: none;
+}
+
 @keyframes pulse-ring {
 	0% {
 		opacity: 0.5;
@@ -906,5 +1067,142 @@ html.dark .theme-toggle span::before {
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
+	}
+}
+
+@media (max-width: 640px) {
+	.resume-shell {
+		padding: 32px 20px 72px;
+	}
+	.resume-row {
+		grid-template-columns: 1fr;
+		gap: 6px;
+	}
+}
+
+/*
+ * Print: a compact A4 resume. Zero page margins leave the browser no room
+ * for its own header/footer (URL, date, title); .resume-shell's padding is
+ * cloned onto every page fragment to act as the page margin instead.
+ */
+@page {
+	size: A4;
+	margin: 0;
+}
+
+@media print {
+	:root,
+	:root.dark,
+	:root:not(.light) {
+		--surface: #ffffff;
+		--raised: #ffffff;
+		--ink: #000000;
+		--ink-soft: #222222;
+		--ink-muted: #444444;
+		--ink-link: #000000;
+		--eyebrow: #333333;
+		--brand: #000000;
+		--hairline: #cccccc;
+	}
+	html,
+	body {
+		background: #ffffff;
+		font-size: 9.5pt;
+		line-height: 1.4;
+	}
+	.resume-toolbar,
+	.resume-eyebrow,
+	.resume-updated,
+	.ambient {
+		display: none !important;
+	}
+	.print-only {
+		display: list-item;
+	}
+	.resume-shell {
+		max-width: none;
+		padding: 14mm 16mm;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+	}
+	.resume {
+		gap: 10pt;
+	}
+	.resume-header {
+		gap: 3pt;
+		padding-bottom: 7pt;
+		border-bottom: 1.5pt solid #000000;
+	}
+	/* Negative tracking makes PDF text extraction (ATS) drop the spaces. */
+	.resume-header h1 {
+		font-size: 22pt;
+		line-height: 1.1;
+		letter-spacing: normal;
+	}
+	.resume-role {
+		font-size: 11pt;
+	}
+	.resume-links {
+		gap: 0 14pt;
+		margin: 0;
+		font-family: inherit;
+		font-size: 8.5pt;
+	}
+	.resume section {
+		gap: 6pt;
+	}
+	.resume h2 {
+		padding-bottom: 2pt;
+		border-bottom: 0.75pt solid #999999;
+		color: #000000;
+		font-family: inherit;
+		font-size: 9pt;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		break-after: avoid;
+	}
+	.resume p {
+		max-width: none;
+	}
+	.resume-entry {
+		break-inside: avoid;
+	}
+	.resume-entry + .resume-entry {
+		padding-top: 6pt;
+		border-top: 0;
+	}
+	.resume-row {
+		grid-template-columns: 44mm minmax(0, 1fr);
+		gap: 0 5mm;
+	}
+	.resume-split {
+		gap: 0 5mm;
+	}
+	.resume-meta {
+		gap: 0;
+	}
+	.resume h3 {
+		font-size: 9.5pt;
+		line-height: 1.35;
+	}
+	.resume .resume-dates {
+		font-family: inherit;
+		font-size: 8.5pt;
+	}
+	.resume-highlights {
+		gap: 2pt;
+		padding-left: 10pt;
+		font-size: 9.5pt;
+		line-height: 1.38;
+	}
+	.resume-highlights li {
+		break-inside: avoid;
+	}
+	.resume-rows {
+		gap: 1.5pt;
+	}
+	.resume a {
+		color: inherit;
+		text-decoration: none;
 	}
 }

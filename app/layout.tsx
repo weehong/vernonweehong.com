@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Poppins } from "next/font/google";
 import Script from "next/script";
-import { JsonLd } from "@/components/json-ld";
 import { isProductionEnv, siteConfig } from "@/lib/site-config";
-import { getPersonSchema, getWebSiteSchema } from "@/lib/structured-data";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,26 +27,26 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
 	metadataBase: new URL(siteConfig.url),
 	title: {
-		default: siteConfig.name,
-		template: `%s | ${siteConfig.name}`,
+		default: siteConfig.title,
+		template: `%s | ${siteConfig.siteName}`,
 	},
 	description: siteConfig.description,
-	applicationName: siteConfig.name,
+	applicationName: siteConfig.siteName,
 	keywords: [...siteConfig.keywords],
 	authors: [{ name: siteConfig.author }],
 	creator: siteConfig.creator,
-	alternates: { canonical: "/" },
+	// No `alternates.canonical` here: it would be inherited by every child
+	// route. Each page sets its own via `pageMetadata()`.
 	openGraph: {
-		type: "profile",
-		url: "/",
-		siteName: siteConfig.name,
-		title: siteConfig.name,
+		type: "website",
+		siteName: siteConfig.siteName,
+		title: siteConfig.title,
 		description: siteConfig.description,
 		locale: siteConfig.locale,
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: siteConfig.name,
+		title: siteConfig.title,
 		description: siteConfig.description,
 	},
 	robots: isProductionEnv
@@ -99,8 +97,6 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<body>
-				<JsonLd data={getWebSiteSchema()} />
-				<JsonLd data={getPersonSchema()} />
 				{children}
 				<Script id="theme-init" strategy="beforeInteractive">
 					{`try{var t=localStorage.getItem("vwhk-theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.add(d?"dark":"light")}catch(e){}`}

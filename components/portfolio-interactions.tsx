@@ -24,6 +24,45 @@ export function ThemeToggle(): React.ReactElement {
 	);
 }
 
+/**
+ * Prints the page. While printing (button or Ctrl+P) the document title is
+ * swapped for `documentTitle`, which browsers use as the PDF file name.
+ */
+export function PrintButton({
+	documentTitle,
+}: {
+	readonly documentTitle: string;
+}): React.ReactElement {
+	useEffect(() => {
+		let pageTitle = document.title;
+		const onBeforePrint = (): void => {
+			pageTitle = document.title;
+			document.title = documentTitle;
+		};
+		const onAfterPrint = (): void => {
+			document.title = pageTitle;
+		};
+		window.addEventListener("beforeprint", onBeforePrint);
+		window.addEventListener("afterprint", onAfterPrint);
+		return (): void => {
+			window.removeEventListener("beforeprint", onBeforePrint);
+			window.removeEventListener("afterprint", onAfterPrint);
+		};
+	}, [documentTitle]);
+
+	return (
+		<button
+			className="button button-primary"
+			type="button"
+			onClick={() => {
+				window.print();
+			}}
+		>
+			Print / Save as PDF
+		</button>
+	);
+}
+
 export function ContactForm(): React.ReactElement {
 	const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
 		"idle"

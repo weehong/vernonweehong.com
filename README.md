@@ -20,7 +20,18 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.example
 NEXT_PUBLIC_APP_ENVIRONMENT=production
 ```
 
-Only deployments with `NEXT_PUBLIC_APP_ENVIRONMENT=production` allow search engine indexing.
+Only deployments with `NEXT_PUBLIC_APP_ENVIRONMENT=production` allow search engine indexing. A production build fails if `NEXT_PUBLIC_SITE_URL` is missing, so canonical URLs never point at `localhost`.
+
+Both values are inlined at build time. For Docker, pass them as build args:
+
+```bash
+docker build \
+  --build-arg NEXT_PUBLIC_SITE_URL=https://vernonweehong.com \
+  --build-arg NEXT_PUBLIC_APP_ENVIRONMENT=production \
+  -t vernon-koh-portfolio .
+```
+
+When content changes, bump `lastModified` in `lib/site-config.ts`; it drives the sitemap and structured-data dates.
 
 The contact form sends mail over SMTP. Copy `.env.example` and set:
 

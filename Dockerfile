@@ -14,6 +14,13 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+# NEXT_PUBLIC_* values are inlined at build time and robots.txt, the sitemap
+# and page metadata are prerendered, so they must be set here. Without
+# NEXT_PUBLIC_APP_ENVIRONMENT=production the image ships as noindex.
+ARG NEXT_PUBLIC_SITE_URL
+ARG NEXT_PUBLIC_APP_ENVIRONMENT
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_APP_ENVIRONMENT=$NEXT_PUBLIC_APP_ENVIRONMENT
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN npm run build
 

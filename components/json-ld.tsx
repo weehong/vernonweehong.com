@@ -1,7 +1,7 @@
-import type { Thing, WithContext } from "schema-dts";
+import type { Graph, Thing, WithContext } from "schema-dts";
 
 type JsonLdProps = {
-	readonly data: WithContext<Thing>;
+	readonly data: WithContext<Thing> | Graph;
 };
 
 /**

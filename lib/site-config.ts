@@ -2,7 +2,7 @@
  * Central SEO / site configuration. Single source of truth imported by the
  * metadata, robots, sitemap, manifest, OG-image and structured-data modules.
  *
- * Edit these values to brand the boilerplate.
+ * Portfolio content (experience, skills, ...) lives in `lib/profile.ts`.
  */
 
 const DEFAULT_URL = "http://localhost:3000";
@@ -17,18 +17,35 @@ const appEnvironment = process.env.NEXT_PUBLIC_APP_ENVIRONMENT ?? "development";
  */
 export const isProductionEnv: boolean = appEnvironment === "production";
 
+const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+// A production build without a site URL would emit localhost canonicals,
+// OG URLs and sitemap entries, so fail the build instead.
+if (isProductionEnv && !configuredUrl) {
+	throw new Error(
+		"NEXT_PUBLIC_SITE_URL must be set when NEXT_PUBLIC_APP_ENVIRONMENT=production."
+	);
+}
+
 export const siteConfig = {
-	/** Full brand / site name — used as the default <title> and OG site name. */
-	name: "Vernon Wee Hong KOH | Backend Engineer",
+	/** Site name — og:site_name, WebSite schema name and the title suffix. */
+	siteName: "Vernon Wee Hong KOH",
+	/** Homepage <title>. */
+	title: "Vernon Wee Hong KOH — Backend Engineer in Singapore",
 	/** Short name for the web app manifest (home-screen label). */
 	shortName: "Vernon KOH",
 	/** Default meta description. */
 	description:
-		"Backend engineer in Singapore building production REST services, integration workflows, and regulated-market API platforms.",
-	/** Absolute canonical origin (no trailing slash). */
-	url: process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_URL,
+		"Vernon Koh is a backend engineer in Singapore building Java and Spring Boot REST services, integration workflows and regulated-market API platforms.",
+	/**
+	 * Absolute canonical origin (no trailing slash). `||` so an empty value,
+	 * e.g. an unset Docker build arg, falls back to the default.
+	 */
+	url: (configuredUrl || DEFAULT_URL).replace(/\/+$/, ""),
 	/** Open Graph locale. */
 	locale: "en_SG",
+	/** BCP 47 language tag for structured data. */
+	language: "en-SG",
 	/** Default keywords. */
 	keywords: [
 		"Vernon Koh",
@@ -42,12 +59,22 @@ export const siteConfig = {
 	/** Author / creator attribution. */
 	author: "Vernon Wee Hong KOH",
 	creator: "Vernon Wee Hong KOH",
-	location: "Singapore",
-	socialLinks: [
-		"https://github.com/weehong",
-		"https://www.linkedin.com/in/weehongkoh/",
-		"https://www.youtube.com/@weehongayden90",
+	/** Other names people search for; emitted as Person `alternateName`. */
+	alternateNames: [
+		"Vernon Koh",
+		"Vernon Wee Hong Koh",
+		"Wee Hong Koh",
+		"Koh Wee Hong",
 	],
+	givenName: "Vernon",
+	additionalName: "Wee Hong",
+	familyName: "Koh",
+	jobTitle: "Backend Engineer",
+	location: "Singapore",
+	/** Absolute or root-relative headshot URL. Unset until a photo exists. */
+	image: undefined as string | undefined,
+	/** Last meaningful content change (ISO date). Bump when content changes. */
+	lastModified: "2026-10-05",
 	/** Alt text for the default OG/Twitter image. */
 	ogImageAlt: "Vernon Wee Hong KOH, Backend Engineer in Singapore",
 	/** theme-color values, kept in sync with app/globals.css. */
