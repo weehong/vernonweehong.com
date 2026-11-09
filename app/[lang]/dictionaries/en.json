@@ -1,0 +1,155 @@
+{
+	"badge": "Open to backend & platform roles",
+	"langNav": "Language",
+	"pageLinks": "Page links",
+	"onThisPage": "On this page",
+	"onThisPost": "On this post",
+	"elsewhere": "Elsewhere",
+	"menu": {
+		"title": "Menu",
+		"open": "Open menu",
+		"close": "Close menu"
+	},
+	"home": "Home",
+	"writing": "Writing",
+	"resume": {
+		"kicker": "Resume",
+		"actions": "Resume actions",
+		"back": "Back to home",
+		"download": "Download PDF",
+		"updated": "Last updated {date}",
+		"summary": "Summary",
+		"skills": "Skills",
+		"experience": "Experience",
+		"projects": "Projects",
+		"awards": "Awards",
+		"education": "Education",
+		"present": "Present",
+		"month": "{month} {year}"
+	},
+	"rss": "RSS feed",
+	"allWriting": "All writing",
+	"themeToDark": "Switch to dark theme",
+	"themeToLight": "Switch to light theme",
+	"footerRole": "Senior backend engineer · Singapore",
+	"readResume": "Read the resume",
+	"contactMe": "Contact me",
+	"current": "Current",
+	"now": "Now",
+	"sections": {
+		"about": "About",
+		"experience": "Experience",
+		"projects": "Projects",
+		"skills": "Skills",
+		"contact": "Contact"
+	},
+	"skillArea": "Skill area",
+	"tools": "Tools",
+	"dailyDrivers": "Daily drivers at DBS",
+	"year": "Year",
+	"type": "Type",
+	"background": "Background",
+	"where": "Where",
+	"award": "Award",
+	"education": "Education",
+	"contact": {
+		"name": "Name",
+		"email": "Email",
+		"message": "Message",
+		"send": "Send message",
+		"sending": "Sending…",
+		"sent": "Thanks, your message is on its way. I will reply soon.",
+		"invalid": "Fill in your name, a valid email address and a message.",
+		"tooMany": "Too many messages. Please try again later.",
+		"error": "Your message could not be sent. Please try again later."
+	},
+	"writingTitle": {
+		"lead": "Notes from ",
+		"mark": "the build",
+		"tail": " and the years around it"
+	},
+	"writingIntro": "Reflections and tech notes: what I build, and what building it teaches me.",
+	"emailCta": "Get posts by email",
+	"search": {
+		"label": "Search everything I've written",
+		"placeholder": "Titles, topics, whole posts. Typos are fine.",
+		"hint": "Searches titles, summaries, topics and the full text. Close spellings still match.",
+		"clear": "Clear search"
+	},
+	"nav": {
+		"search": "Search",
+		"latest": "Latest",
+		"topics": "Topics",
+		"archive": "Archive"
+	},
+	"newThisMonth": "New this month",
+	"readPost": "Read the post",
+	"topics": {
+		"reflections": "Reflections",
+		"tech": "Tech",
+		"reflectionsDesc": "Lessons from ten years of shipping, and the life around it.",
+		"techDesc": "APIs, search, services and the tools I build them with."
+	},
+	"allTopics": "All topics",
+	"topicGroup": "Filter by topic",
+	"results": "Search results",
+	"count": {
+		"post": "{n} post",
+		"posts": "{n} posts",
+		"total": "{n} posts",
+		"match": "{n} post matches “{q}”",
+		"matches": "{n} posts match “{q}”"
+	},
+	"matchedIn": "Matched in",
+	"matchWhere": {
+		"title": "title",
+		"summary": "summary",
+		"text": "text",
+		"topic": "topic"
+	},
+	"empty": {
+		"title": "Nothing matches “{q}”",
+		"hint": "Try fewer letters, another spelling, or clear the filters.",
+		"clear": "Clear search and filters",
+		"noPostsTitle": "No posts yet",
+		"noPostsHint": "The first one is on its way. Subscribe below to get it by email."
+	},
+	"minutes": "{n} min read",
+	"subscribe": {
+		"eyebrow": "Email updates",
+		"title": "Get new posts by email",
+		"desc": "One email when I publish something new, with the post in English and Chinese. No other mail, and you can unsubscribe in one click.",
+		"label": "Email address",
+		"button": "Subscribe",
+		"sending": "Subscribing…",
+		"error": "Enter an email address like name@example.com.",
+		"retry": "Something went wrong. Please try again.",
+		"fine": "Your address is only used for these updates.",
+		"privacy": "How I handle it",
+		"rss": "Prefer RSS?",
+		"doneTitle": "Almost done. Check your inbox.",
+		"doneText": "I sent a confirmation link to {email}. Updates start once you click it."
+	},
+	"post": {
+		"thoughts": "Thoughts on this? I reply to everything.",
+		"related": "You might also like",
+		"aiTag": "Polished with AI",
+		"howTitle": "How this post was written",
+		"howBody": "The ideas, opinions and examples are mine. I wrote them down as rough notes, and AI shaped them into finished sentences in English and Chinese. I review every post before it goes up."
+	},
+	"ai": {
+		"title": "My ideas, polished with AI.",
+		"note": "I write the thoughts and rough notes; AI shapes them into finished sentences in English and Chinese. I review every post before it goes up."
+	},
+	"notFound": {
+		"kicker": "404 · Not found",
+		"text": "The page you are looking for does not exist.",
+		"home": "Go back home"
+	},
+	"meta": {
+		"title": "Vernon KOH · Senior Backend Engineer in Singapore",
+		"description": "Vernon KOH (Vernon Wee Hong KOH) is a senior backend engineer in Singapore building Java and Spring Boot integrations for regulated banking.",
+		"writingDescription": "Reflections and tech notes by Vernon KOH, a backend engineer in Singapore. Every post exists in English and Chinese.",
+		"notFoundTitle": "Page not found"
+	}
+}

@@ -1,0 +1,384 @@
+{
+	"$comment": "Approved by Vernon (English and Chinese), 2026-11-09. The general resume for /resume and /zh/resume, and the base for future job-specific versions; keep it generic. English follows Vernon’s resume PDF of 2026-11-09 with a generic title, standard hyphenation and **…** around result numbers (rendered bold). This file is the source of truth for career facts (roles, companies, dates, numbers); the homepage copy must agree with it. Facts (numbers, dates, names, URLs) must stay identical across languages. Company, product and technology names stay in English in both editions, except DBS Bank (星展银行). Dates are YYYY-MM; `end: null` means current. `updated` is the date shown as Last updated.",
+	"status": "approved",
+	"updated": "2026-11-09",
+	"meta": {
+		"description": {
+			"en": "Resume of Vernon KOH (Vernon Wee Hong KOH), senior backend engineer in Singapore: Java and Spring Boot at DBS Bank, projects, skills and education.",
+			"zh": "Vernon KOH（Vernon Wee Hong KOH）的简历：新加坡资深后端工程师，在星展银行使用 Java 和 Spring Boot，含项目、技能和教育背景。"
+		}
+	},
+	"header": {
+		"title": {
+			"en": "Senior Backend Engineer",
+			"zh": "资深后端工程师"
+		},
+		"location": {
+			"en": "Singapore",
+			"zh": "新加坡"
+		},
+		"email": "vernonweehongkoh@gmail.com",
+		"site": "vernonweehong.com",
+		"links": [
+			{
+				"label": "GitHub",
+				"href": "https://github.com/weehong"
+			},
+			{
+				"label": "LinkedIn",
+				"href": "https://sg.linkedin.com/in/vernonweehong"
+			}
+		]
+	},
+	"summary": {
+		"en": "Senior backend engineer with 11 years in software, 9+ of them in backend, and expert in Java and Spring Boot. Proven record consolidating one-off integrations into reusable, versioned services in a regulated bank, building event-driven integration on Kafka, and delivering SaaS API integrations across payments, commerce and AI. Hands-on coder and technical lead who owns estimation, design, delivery and operations.",
+		"zh": "资深后端工程师，从事软件开发 11 年，其中 9 年以上专注后端，精通 Java 和 Spring Boot。曾在受监管的银行中把一次性集成整合为可复用、版本化的服务，基于 Kafka 构建事件驱动集成，并交付涵盖支付、电商和 AI 的 SaaS API 集成。既亲自写代码，也担任技术负责人，负责估算、设计、交付和运维。"
+	},
+	"skills": [
+		{
+			"group": {
+				"en": "Language and Framework",
+				"zh": "语言与框架"
+			},
+			"items": [
+				{
+					"en": "Java and Spring Boot (expert)",
+					"zh": "Java 和 Spring Boot（精通）"
+				},
+				"C# .NET Core",
+				"Go",
+				"TypeScript",
+				"Kotlin",
+				"React",
+				"Next.js"
+			]
+		},
+		{
+			"group": {
+				"en": "Integration and API",
+				"zh": "集成与 API"
+			},
+			"items": [
+				{
+					"en": "RESTful API design",
+					"zh": "RESTful API 设计"
+				},
+				{
+					"en": "Versioned integration contracts",
+					"zh": "版本化集成契约"
+				},
+				"JSON",
+				"HTTP/SSL",
+				{
+					"en": "OAuth 2.0 and OpenID Connect (Keycloak, Cognito)",
+					"zh": "OAuth 2.0 和 OpenID Connect（Keycloak、Cognito）"
+				},
+				{
+					"en": "SaaS APIs (Stripe, Shopee, OpenAI, Kofax)",
+					"zh": "SaaS API（Stripe、Shopee、OpenAI、Kofax）"
+				}
+			]
+		},
+		{
+			"group": {
+				"en": "Messaging and Architecture",
+				"zh": "消息与架构"
+			},
+			"items": [
+				{
+					"en": "Kafka event publishing",
+					"zh": "Kafka 事件发布"
+				},
+				{
+					"en": "AWS SQS/SNS pipelines",
+					"zh": "AWS SQS/SNS 管道"
+				},
+				{
+					"en": "Retry workers",
+					"zh": "重试任务"
+				},
+				{
+					"en": "Batch processing",
+					"zh": "批处理"
+				},
+				{
+					"en": "Fault-tolerant design",
+					"zh": "容错设计"
+				},
+				"CQRS",
+				{
+					"en": "Clean Architecture",
+					"zh": "整洁架构"
+				}
+			]
+		},
+		{
+			"group": {
+				"en": "Data, Cache and Search",
+				"zh": "数据、缓存与搜索"
+			},
+			"items": [
+				"PostgreSQL",
+				"MySQL",
+				"MongoDB",
+				{
+					"en": "Redis caching",
+					"zh": "Redis 缓存"
+				},
+				{
+					"en": "OpenSearch (Elasticsearch-compatible)",
+					"zh": "OpenSearch（兼容 Elasticsearch）"
+				},
+				"S3"
+			]
+		},
+		{
+			"group": {
+				"en": "Cloud and Delivery",
+				"zh": "云与交付"
+			},
+			"items": [
+				"AWS",
+				"Google Cloud",
+				"DigitalOcean",
+				"Docker",
+				"Jenkins",
+				"SonarQube",
+				"CloudWatch",
+				"Cloudflare"
+			]
+		},
+		{
+			"group": {
+				"en": "Delivery and Data Quality",
+				"zh": "交付与数据质量"
+			},
+			"items": [
+				{
+					"en": "Requirements refinement",
+					"zh": "需求细化"
+				},
+				{
+					"en": "High-level estimation (HLE)",
+					"zh": "高层估算（HLE）"
+				},
+				{
+					"en": "Infrastructure and database design",
+					"zh": "基础设施与数据库设计"
+				},
+				{
+					"en": "Code review",
+					"zh": "代码评审"
+				},
+				{
+					"en": "Data cleansing and root-cause analysis",
+					"zh": "数据清洗与根因分析"
+				},
+				{
+					"en": "AI-assisted development",
+					"zh": "AI 辅助开发"
+				}
+			]
+		},
+		{
+			"group": {
+				"en": "Spoken Language",
+				"zh": "语言能力"
+			},
+			"items": [
+				{
+					"en": "English (fluent)",
+					"zh": "英语（流利）"
+				},
+				{
+					"en": "Mandarin Chinese (fluent)",
+					"zh": "普通话（流利）"
+				}
+			]
+		}
+	],
+	"experience": [
+		{
+			"role": {
+				"en": "Software Engineer",
+				"zh": "软件工程师"
+			},
+			"company": {
+				"en": "DBS Bank",
+				"zh": "星展银行"
+			},
+			"start": "2020-04",
+			"end": null,
+			"highlights": [
+				{
+					"en": "Drive client onboarding workflows in the Discretionary Portfolio Management (DPM) team for Treasures Private Client, DBS's most premium customer tier, powering the journey to a new portfolio application, and delivered **4 end-to-end workflows in 5 months** with a lean team of 5 developers.",
+					"zh": "在全权委托投资组合管理（DPM）团队负责 Treasures Private Client（星展银行最高端的客户层级）的客户开户流程，支撑客户申请新投资组合的整个过程，并以 5 名开发人员的精简团队**在 5 个月内交付 4 个端到端流程**。"
+				},
+				{
+					"en": "Built DPM's event-driven integration on Kafka, publishing every platform activity, including account openings, messages and updates, as events for downstream systems to consume, keeping them in sync without tight coupling.",
+					"zh": "基于 Kafka 构建 DPM 的事件驱动集成，把开户、消息、更新等所有平台活动作为事件发布给下游系统消费，在不紧耦合的前提下保持各系统同步。"
+				},
+				{
+					"en": "Partner directly with business stakeholders to sharpen requirements into buildable scope, then own high-level estimation (HLE), infrastructure planning and database design, safeguard quality through code review, and step up as acting project lead whenever the team lead is away.",
+					"zh": "直接与业务相关方合作，把需求细化为可落地的范围，并负责高层估算（HLE）、基础设施规划和数据库设计，通过代码评审把控质量，在团队负责人不在时担任代理项目负责人。"
+				},
+				{
+					"en": "Own operational reliability for DPM integrations, using CloudWatch monitoring and audit logging, running data sanity checks and cleansing, and pinpointing the root cause of cross-system misalignment with hard evidence.",
+					"zh": "负责 DPM 集成的运行可靠性：使用 CloudWatch 监控和审计日志，执行数据校验与清洗，并凭确凿证据定位跨系统数据不一致的根本原因。"
+				},
+				{
+					"en": "Previously architected integration APIs for a regional banking platform in India and Taiwan, consolidating one-off integrations into reusable Java and Spring Boot services with versioned integration contracts and market-specific authentication and access control, and shipped production integrations for staff-assisted banking journeys through automated regression, rigorous peer review and phased rollout in a highly regulated environment.",
+					"zh": "此前为印度和台湾的区域银行平台设计集成 API，把一次性集成整合为可复用的 Java 和 Spring Boot 服务，配有版本化集成契约和按市场区分的认证与访问控制；并在高度监管的环境中，通过自动化回归测试、严格的同行评审和分阶段上线，交付员工协助办理业务的生产集成。"
+				},
+				{
+					"en": "Transformed reporting services with Kofax digital signature integration, slashing APAC setup effort by **30%** and collapsing document turnaround from **hours to seconds**, and standardized API consumption patterns adopted by **5+ teams**, eliminating duplicated integration code.",
+					"zh": "重构报表服务并集成 Kofax 数字签名，使亚太区配置工作量减少**30%**，文件处理时间从**数小时缩短到几秒**；并统一了 API 调用模式，已被**5 个以上团队**采用，消除了重复的集成代码。"
+				}
+			]
+		},
+		{
+			"role": {
+				"en": "Founder and Managing Director",
+				"zh": "创始人兼董事总经理"
+			},
+			"company": "Resetrix Pte. Ltd.",
+			"start": "2025-02",
+			"end": null,
+			"highlights": [
+				{
+					"en": "Founded and run a workflow digitalisation company alongside a full-time role at DBS Bank, owning end-to-end delivery from requirements and solution design through build, deployment and handover, and leading in-house engineers and external specialists as technical lead.",
+					"zh": "在星展银行全职工作之余，创办并经营一家流程数字化公司，负责从需求、方案设计到开发、部署和交付的端到端工作，并以技术负责人身份带领内部工程师和外部专家。"
+				},
+				{
+					"en": "Architected and launched the backend API for Life Poem, a storytelling app for older adults adopted in a Singapore university research study, integrating the OpenAI API for AI companion conversations and story illustration, with Dockerized SIT and production environments and controlled release promotion.",
+					"zh": "为 Life Poem 设计并上线后端 API。这是一款面向长者的讲故事应用，已被新加坡一所大学的研究项目采用。后端集成 OpenAI API，用于 AI 陪伴对话和故事插图，配有 Docker 化的 SIT 与生产环境，以及受控的版本发布流程。"
+				},
+				{
+					"en": "Engineered research-grade privacy and compliance controls: aggregate-only researcher dashboards, pre-provisioned study accounts, 30-day data deletion and 72-hour breach notification.",
+					"zh": "构建达到研究标准的隐私与合规控制：研究人员看板只显示汇总数据、预先开通的研究账户、30 天内删除数据，以及 72 小时内通报数据泄露。"
+				},
+				{
+					"en": "Architected an enquiry intake, triage and routing proof of concept for a wine distributor in .NET with Clean Architecture and CQRS, including a data masking module that protects sensitive customer data.",
+					"zh": "为一家葡萄酒分销商用 .NET 设计询价接收、分类和分派的概念验证，采用整洁架构和 CQRS，并包含保护敏感客户数据的数据脱敏模块。"
+				}
+			]
+		},
+		{
+			"role": {
+				"en": "Full-Stack Developer",
+				"zh": "全栈开发工程师"
+			},
+			"company": "IPI Singapore",
+			"start": "2018-05",
+			"end": "2020-04",
+			"highlights": [
+				{
+					"en": "Accelerated operational responsiveness by **60%** by engineering a Go batch-processing backend that eliminated manual routing, exposing explicit REST integration points for downstream teams.",
+					"zh": "构建 Go 批处理后端，取消人工分派，使运营响应速度提升**60%**，并为下游团队提供明确的 REST 集成点。"
+				},
+				{
+					"en": "Built and operated the backend for project tracking and invoicing, replacing fragmented email and spreadsheet coordination with a single system of record for status and billing.",
+					"zh": "构建并运维项目跟踪和开票后端，以统一的状态与账单记录系统取代分散的邮件和电子表格协作。"
+				}
+			]
+		},
+		{
+			"role": {
+				"en": "Full-Stack Developer",
+				"zh": "全栈开发工程师"
+			},
+			"company": "Blissbox Pte. Ltd.",
+			"start": "2017-07",
+			"end": "2018-04",
+			"highlights": [
+				{
+					"en": "Architected and launched a commerce backend on Google Cloud (Laravel, MySQL) with Stripe payment processing in just **3 months**, sustaining **99.9%** uptime and fully digitizing the client's sales and payment path.",
+					"zh": "仅用**3 个月**在 Google Cloud 上设计并上线电商后端（Laravel、MySQL），接入 Stripe 支付，保持**99.9%** 的可用性，并将客户的销售和支付流程全面数字化。"
+				}
+			]
+		},
+		{
+			"role": {
+				"en": "Web Developer",
+				"zh": "网页开发工程师"
+			},
+			"company": "WizWerx Pte. Ltd.",
+			"start": "2015-09",
+			"end": "2017-07",
+			"highlights": [
+				{
+					"en": "Delivered PHP web solutions for SME clients from requirements to go-live, consistently on schedule and aligned to client branding and conversion goals.",
+					"zh": "为中小企业客户交付 PHP 网站方案，从需求到上线始终按时完成，并契合客户的品牌和转化目标。"
+				}
+			]
+		}
+	],
+	"projects": [
+		{
+			"name": "Wrapsfer",
+			"status": {
+				"en": "3PL platform, in development",
+				"zh": "3PL 平台，开发中"
+			},
+			"description": {
+				"en": "Building solo, from scratch, a multi-tenant 3PL fulfilment and order management platform for Southeast Asia on Spring Boot 4, PostgreSQL and React, integrating the Shopee, Lazada and TikTok Shop APIs to pull orders and push live stock, with Cognito identity, audit logging and Stripe subscription billing, sized for 10,000 orders a day.",
+				"zh": "从零开始独立开发面向东南亚的多租户 3PL 履约与订单管理平台，基于 Spring Boot 4、PostgreSQL 和 React，集成 Shopee、Lazada 和 TikTok Shop API 拉取订单并实时同步库存，配有 Cognito 身份认证、审计日志和 Stripe 订阅计费，按每天 10,000 单的规模设计。"
+			}
+		},
+		{
+			"name": {
+				"en": "Full-Text Search for PDFs on AWS",
+				"zh": "基于 AWS 的 PDF 全文搜索"
+			},
+			"description": {
+				"en": "Engineered a production-grade search backend in C# .NET with CQRS, orchestrating document extraction through an SQS/SNS event pipeline with resilient retry workers, S3 storage and fuzzy, faceted OpenSearch queries, hardened with Cognito and CloudWatch.",
+				"zh": "用 C# .NET 和 CQRS 构建生产级搜索后端，通过带重试任务的 SQS/SNS 事件管道编排文档抽取，使用 S3 存储，由 OpenSearch 提供模糊查询和分面查询，并以 Cognito 和 CloudWatch 加固。"
+			}
+		},
+		{
+			"name": "Upmatches",
+			"status": {
+				"en": "sold, since sunset",
+				"zh": "已出售，现已停止运营"
+			},
+			"description": {
+				"en": "Single-handedly owned the shared REST APIs powering the web, Android and iOS clients of a Singapore badminton platform, from service design to production support, carrying the product through to a successful sale.",
+				"zh": "独自负责新加坡一个羽毛球平台的共享 REST API，支撑其网页、Android 和 iOS 客户端，从服务设计到生产支持全程负责，并把产品带到成功出售。"
+			}
+		}
+	],
+	"awards": [
+		{
+			"year": "2019",
+			"title": {
+				"en": "DBS Recognition for Outstanding Performance, DBS Paradigm Shift Global Hackathon (Team 1206)",
+				"zh": "星展银行杰出表现表彰，星展银行 Paradigm Shift 全球黑客松（1206 队）"
+			},
+			"url": "https://www.dbs.com/NewsPrinter.page?newsId=k0u62hn2&locale=en"
+		}
+	],
+	"education": [
+		{
+			"period": "2012 - 2014",
+			"school": {
+				"en": "Campbell University, North Carolina",
+				"zh": "坎贝尔大学，北卡罗来纳州"
+			},
+			"credential": {
+				"en": "B.S. in Information Technology",
+				"zh": "信息技术理学学士"
+			}
+		},
+		{
+			"period": "2012 - 2014",
+			"school": {
+				"en": "Tunku Abdul Rahman University College, Malaysia",
+				"zh": "拉曼大学学院，马来西亚"
+			},
+			"credential": {
+				"en": "Advanced Diploma in Internet Technology cum BS Degree",
+				"zh": "互联网技术高级文凭（衔接学士学位）"
+			}
+		}
+	]
+}

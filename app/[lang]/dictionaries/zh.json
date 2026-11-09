@@ -1,0 +1,155 @@
+{
+	"badge": "正在寻找后端与平台工程职位",
+	"langNav": "语言",
+	"pageLinks": "页面链接",
+	"onThisPage": "本页内容",
+	"onThisPost": "本文目录",
+	"elsewhere": "其他链接",
+	"menu": {
+		"title": "菜单",
+		"open": "打开菜单",
+		"close": "关闭菜单"
+	},
+	"home": "首页",
+	"writing": "写作",
+	"resume": {
+		"kicker": "简历",
+		"actions": "简历操作",
+		"back": "返回首页",
+		"download": "下载 PDF",
+		"updated": "最后更新：{date}",
+		"summary": "简介",
+		"skills": "技能",
+		"experience": "经历",
+		"projects": "项目",
+		"awards": "奖项",
+		"education": "教育",
+		"present": "至今",
+		"month": "{year} 年 {month} 月"
+	},
+	"rss": "RSS 订阅",
+	"allWriting": "全部文章",
+	"themeToDark": "切换到深色模式",
+	"themeToLight": "切换到浅色模式",
+	"footerRole": "资深后端工程师 · 新加坡",
+	"readResume": "查看简历",
+	"contactMe": "联系我",
+	"current": "在职",
+	"now": "现在",
+	"sections": {
+		"about": "关于",
+		"experience": "经历",
+		"projects": "项目",
+		"skills": "技能",
+		"contact": "联系"
+	},
+	"skillArea": "领域",
+	"tools": "工具",
+	"dailyDrivers": "在星展银行日常使用",
+	"year": "年份",
+	"type": "类型",
+	"background": "内容",
+	"where": "地点",
+	"award": "奖项",
+	"education": "教育",
+	"contact": {
+		"name": "姓名",
+		"email": "邮箱",
+		"message": "留言",
+		"send": "发送",
+		"sending": "发送中…",
+		"sent": "谢谢，消息已发出，我会尽快回复。",
+		"invalid": "请填写姓名、有效的邮箱地址和留言。",
+		"tooMany": "发送次数过多，请稍后再试。",
+		"error": "消息未能发出，请稍后再试。"
+	},
+	"writingTitle": {
+		"lead": "",
+		"mark": "动手做事",
+		"tail": "之余的笔记与思考"
+	},
+	"writingIntro": "关于感悟与技术的笔记：我做了什么，以及做的过程教会了我什么。",
+	"emailCta": "邮件订阅",
+	"search": {
+		"label": "搜索全部文章",
+		"placeholder": "搜索标题、主题或全文",
+		"hint": "会搜索标题、摘要、主题和全文。英文单词拼错一两个字母也能找到。",
+		"clear": "清除搜索"
+	},
+	"nav": {
+		"search": "搜索",
+		"latest": "最新",
+		"topics": "主题",
+		"archive": "归档"
+	},
+	"newThisMonth": "本月新文",
+	"readPost": "阅读全文",
+	"topics": {
+		"reflections": "感悟",
+		"tech": "技术",
+		"reflectionsDesc": "十年工作与生活里，慢慢积累下来的体会。",
+		"techDesc": "关于 API、搜索、服务，以及搭建它们的工具。"
+	},
+	"allTopics": "全部主题",
+	"topicGroup": "按主题筛选",
+	"results": "搜索结果",
+	"count": {
+		"post": "{n} 篇",
+		"posts": "{n} 篇",
+		"total": "共 {n} 篇",
+		"match": "找到 {n} 篇与“{q}”相关的文章",
+		"matches": "找到 {n} 篇与“{q}”相关的文章"
+	},
+	"matchedIn": "匹配：",
+	"matchWhere": {
+		"title": "标题",
+		"summary": "摘要",
+		"text": "正文",
+		"topic": "主题"
+	},
+	"empty": {
+		"title": "没有找到与“{q}”相关的文章",
+		"hint": "试试更短的关键词，或清除筛选条件。",
+		"clear": "清除搜索和筛选",
+		"noPostsTitle": "还没有文章",
+		"noPostsHint": "第一篇正在路上。在下方订阅，发布时会通过邮件通知你。"
+	},
+	"minutes": "{n} 分钟阅读",
+	"subscribe": {
+		"eyebrow": "邮件更新",
+		"title": "新文章发到你的邮箱",
+		"desc": "每次发布新文章时发一封邮件，内含中英文两个版本。没有其他内容，随时一键退订。",
+		"label": "邮箱地址",
+		"button": "订阅",
+		"sending": "订阅中…",
+		"error": "请输入有效的邮箱地址，例如 name@example.com。",
+		"retry": "出了点问题，请再试一次。",
+		"fine": "你的邮箱只用于发送文章更新。",
+		"privacy": "隐私说明",
+		"rss": "用 RSS 订阅",
+		"doneTitle": "快好了，请查收邮件。",
+		"doneText": "确认链接已发送到 {email}，点击后即可开始接收更新。"
+	},
+	"post": {
+		"thoughts": "对这篇文章有想法？每条消息我都会回复。",
+		"related": "你可能也会喜欢",
+		"aiTag": "AI 润色",
+		"howTitle": "这篇文章是怎么写的",
+		"howBody": "观点、看法和例子都来自我。我先写下粗略的笔记，再由 AI 整理成通顺的中英文文章。每篇文章发布前都由我审阅。"
+	},
+	"ai": {
+		"title": "观点是我的，文字经 AI 润色。",
+		"note": "我写下想法和草稿，由 AI 整理成通顺的中英文文章。每篇文章发布前都由我审阅。"
+	},
+	"notFound": {
+		"kicker": "404 · 页面不存在",
+		"text": "你要找的页面不存在。",
+		"home": "返回首页"
+	},
+	"meta": {
+		"title": "Vernon KOH · 新加坡资深后端工程师",
+		"description": "Vernon KOH（Vernon Wee Hong KOH）是新加坡的资深后端工程师，为受监管的银行业务构建 Java 与 Spring Boot 集成。",
+		"writingDescription": "新加坡后端工程师 Vernon KOH 的感悟与技术笔记，每篇文章都有中英文两个版本。",
+		"notFoundTitle": "页面不存在"
+	}
+}

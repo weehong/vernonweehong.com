@@ -1,0 +1,55 @@
+import { SkillChip } from "@/components/ui/chips";
+import type { Profile } from "@/lib/profile";
+
+const headClass = "px-5 py-3 font-mono text-label uppercase text-ink-muted";
+
+/** Skill area · Tools. Daily drivers use the dark chip. */
+export function SkillsTable({
+	table,
+}: {
+	readonly table: Profile["skills"]["skillsTable"];
+}): React.ReactElement {
+	const [areaColumn, toolsColumn] = table.columns;
+	return (
+		<div className="overflow-x-auto rounded-md border border-rule bg-raised">
+			<table className="w-full min-w-[520px] border-collapse text-left text-body-sm">
+				<thead>
+					<tr className="bg-sunken">
+						<th scope="col" className={`w-[180px] ${headClass}`}>
+							{areaColumn}
+						</th>
+						<th scope="col" className={headClass}>
+							{toolsColumn}
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{table.rows.map((row) => (
+						<tr key={row.area} className="border-t border-rule">
+							<th
+								scope="row"
+								className="px-5 py-4 align-top font-mono text-meta font-medium text-ink"
+							>
+								{row.area}
+							</th>
+							<td className="px-5 py-3">
+								<div className="flex flex-wrap gap-2">
+									{row.tools.map((tool) => (
+										<SkillChip
+											key={tool}
+											daily={(
+												row.dailyDrivers as ReadonlyArray<string>
+											).includes(tool)}
+										>
+											{tool}
+										</SkillChip>
+									))}
+								</div>
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	);
+}

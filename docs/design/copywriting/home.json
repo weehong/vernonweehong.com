@@ -1,0 +1,822 @@
+{
+	"$comment": "Approved by Vernon (English and Chinese), 2026-11-09; revised to agree with copywriting/resume.json and approved again the same day. The canvas artboards still show the earlier text. Approved homepage copy, English and Chinese, taken from the canvas artboards \"Homepage · light\" and \"首页 · 中文版\". Strings marked **…** render as <strong className=\"font-semibold text-ink\">. Heading objects render lead + <mark className=\"highlight\">mark</mark> + tail. Facts (numbers, dates, names, URLs) must stay identical across languages. English heading leads end with a space; Chinese ones do not.",
+	"hero": {
+		"kicker": {
+			"en": "Senior backend engineer · Singapore · GMT+8",
+			"zh": "资深后端工程师 · 新加坡 · GMT+8"
+		},
+		"name": "Vernon\nKOH",
+		"statement": {
+			"lead": {
+				"en": "I design APIs that ",
+				"zh": "我设计"
+			},
+			"mark": {
+				"en": "hold up in production",
+				"zh": "经得起生产考验"
+			},
+			"tail": {
+				"en": ".",
+				"zh": "的 API。"
+			}
+		},
+		"intro": {
+			"en": "At DBS Bank since 2020, building Java and Spring Boot services for regulated banking across Singapore, India and Taiwan.",
+			"zh": "2020 年起在星展银行工作，为新加坡、印度和台湾的受监管银行业务构建 Java 与 Spring Boot 服务。"
+		},
+		"profileCard": {
+			"request": "GET /v1/engineers/vernon-koh",
+			"status": "200 OK",
+			"rows": [
+				{
+					"key": {
+						"en": "role",
+						"zh": "职位"
+					},
+					"value": {
+						"en": "Senior Backend Engineer",
+						"zh": "资深后端工程师"
+					}
+				},
+				{
+					"key": {
+						"en": "company",
+						"zh": "公司"
+					},
+					"value": {
+						"en": "DBS Bank, since 2020",
+						"zh": "星展银行，2020 年至今"
+					}
+				},
+				{
+					"key": {
+						"en": "markets",
+						"zh": "市场"
+					},
+					"value": {
+						"en": "SG · IN · TW",
+						"zh": "新加坡 · 印度 · 台湾"
+					}
+				},
+				{
+					"key": {
+						"en": "stack",
+						"zh": "技术栈"
+					},
+					"value": {
+						"en": "Java, Spring Boot, TypeScript",
+						"zh": "Java, Spring Boot, TypeScript"
+					}
+				}
+			]
+		}
+	},
+	"about": {
+		"label": {
+			"en": "About",
+			"zh": "关于"
+		},
+		"heading": {
+			"lead": {
+				"en": "Production first, ",
+				"zh": "生产优先，"
+			},
+			"mark": {
+				"en": "contracts that hold",
+				"zh": "契约要靠得住"
+			},
+			"tail": {
+				"en": "",
+				"zh": ""
+			}
+		},
+		"paragraphs": [
+			{
+				"en": "I own backend work end to end: requirements, service design, implementation, testing, rollout and production hardening, with teams across Singapore, India and Taiwan.",
+				"zh": "我端到端负责后端工作：需求、服务设计、开发、测试、上线和生产加固，并与新加坡、印度和台湾的团队协作。"
+			},
+			{
+				"en": "AI coding agents are part of that loop now. I use them for scaffolding, test generation and large refactors, and I review every line that reaches a pull request. The API contract, the failure modes and the observability stay mine to own.",
+				"zh": "AI 编程代理现在是这个流程的一部分。我用它们搭脚手架、生成测试、做大规模重构，但每一行进入 pull request 的代码我都会亲自审查。接口契约、失败场景和可观测性，始终由我负责。"
+			}
+		],
+		"nowLabel": {
+			"en": "Now",
+			"zh": "现在"
+		},
+		"now": {
+			"en": "Client onboarding integrations for DBS Treasures Private Client, and Wrapsfer, a 3PL platform I am building solo.",
+			"zh": "在星展银行为 Treasures Private Client 构建客户开户集成，同时独立开发 3PL 平台 Wrapsfer。"
+		}
+	},
+	"experience": {
+		"label": {
+			"en": "Experience",
+			"zh": "经历"
+		},
+		"heading": {
+			"lead": {
+				"en": "Eleven years shipping ",
+				"zh": "做软件，"
+			},
+			"mark": {
+				"en": "software",
+				"zh": "已经十一年"
+			},
+			"tail": {
+				"en": "",
+				"zh": ""
+			}
+		},
+		"currentLabel": {
+			"en": "Current",
+			"zh": "在职"
+		},
+		"entries": [
+			{
+				"period": {
+					"en": "2020 — now",
+					"zh": "2020 — 至今"
+				},
+				"location": {
+					"en": "Singapore",
+					"zh": "新加坡"
+				},
+				"current": true,
+				"role": {
+					"en": "Software Engineer",
+					"zh": "软件工程师"
+				},
+				"company": {
+					"en": "DBS Bank",
+					"zh": "星展银行"
+				},
+				"outcomes": [
+					{
+						"en": "Drive client onboarding for Treasures Private Client, DBS’s most premium tier: **4 end-to-end workflows in 5 months** with a team of 5.",
+						"zh": "负责星展银行最高端客户层级 Treasures Private Client 的开户流程：5 人团队**在 5 个月内交付 4 个端到端流程**。"
+					},
+					{
+						"en": "Built the team’s event-driven integration on Kafka, so downstream systems stay in sync without tight coupling.",
+						"zh": "基于 Kafka 构建团队的事件驱动集成，让下游系统在不紧耦合的情况下保持同步。"
+					},
+					{
+						"en": "Architected integration APIs for a regional banking platform in India and Taiwan: reusable Java/Spring Boot services with versioned contracts and market-specific access control.",
+						"zh": "为印度和台湾的区域银行平台设计集成 API：可复用的 Java/Spring Boot 服务，配有版本化契约和按市场区分的访问控制。"
+					},
+					{
+						"en": "Rebuilt reporting services, cutting APAC setup effort by **30%** and document turnaround from **hours to seconds**; standardized API patterns now used by **5+ teams**.",
+						"zh": "重构报表服务，亚太区配置工作量减少**30%**，文件处理时间从**数小时缩短到几秒**；统一的 API 调用模式已被**5 个以上团队**采用。"
+					}
+				],
+				"tags": [
+					{
+						"en": "Java",
+						"zh": "Java"
+					},
+					{
+						"en": "Spring Boot",
+						"zh": "Spring Boot"
+					},
+					{
+						"en": "Kafka",
+						"zh": "Kafka"
+					},
+					{
+						"en": "API Design",
+						"zh": "API 设计"
+					},
+					{
+						"en": "Access Control",
+						"zh": "访问控制"
+					}
+				]
+			},
+			{
+				"period": {
+					"en": "2025 — now",
+					"zh": "2025 — 至今"
+				},
+				"location": {
+					"en": "Singapore",
+					"zh": "新加坡"
+				},
+				"current": true,
+				"role": {
+					"en": "Founder and Managing Director",
+					"zh": "创始人兼董事总经理"
+				},
+				"company": {
+					"en": "Resetrix",
+					"zh": "Resetrix"
+				},
+				"outcomes": [
+					{
+						"en": "Run a workflow digitalisation company alongside DBS, as technical lead from requirements to handover.",
+						"zh": "在星展银行的工作之外经营一家流程数字化公司，担任技术负责人，从需求一直负责到交付。"
+					},
+					{
+						"en": "Launched the backend for Life Poem, a storytelling app for older adults used in a Singapore university research study, with OpenAI-powered companion conversations and illustrations.",
+						"zh": "上线 Life Poem 的后端。这是一款面向长者的讲故事应用，用于新加坡一所大学的研究项目，借助 OpenAI 提供陪伴对话和插图。"
+					}
+				],
+				"tags": [
+					{
+						"en": "OpenAI API",
+						"zh": "OpenAI API"
+					},
+					{
+						"en": "Docker",
+						"zh": "Docker"
+					},
+					{
+						"en": "CQRS",
+						"zh": "CQRS"
+					},
+					{
+						"en": "Technical Lead",
+						"zh": "技术负责人"
+					}
+				]
+			},
+			{
+				"period": {
+					"en": "2018 — 2020",
+					"zh": "2018 — 2020"
+				},
+				"location": {
+					"en": "Singapore",
+					"zh": "新加坡"
+				},
+				"role": {
+					"en": "Full-Stack Developer",
+					"zh": "全栈开发工程师"
+				},
+				"company": {
+					"en": "IPI Singapore",
+					"zh": "IPI Singapore"
+				},
+				"outcomes": [
+					{
+						"en": "Built a Go batch-processing backend that removed manual routing, speeding up operational response by **60%**.",
+						"zh": "用 Go 构建批处理后端，取代人工分派，运营响应速度提升**60%**。"
+					},
+					{
+						"en": "Ran the backend behind project tracking and invoicing: one system of record for status and billing.",
+						"zh": "负责项目跟踪与开票系统的后端：项目状态和账单统一记录在一个系统里。"
+					}
+				],
+				"tags": [
+					{
+						"en": "Go",
+						"zh": "Go"
+					},
+					{
+						"en": "REST",
+						"zh": "REST"
+					},
+					{
+						"en": "Automation",
+						"zh": "自动化"
+					}
+				]
+			},
+			{
+				"period": {
+					"en": "2017 — 2018",
+					"zh": "2017 — 2018"
+				},
+				"location": {
+					"en": "Singapore",
+					"zh": "新加坡"
+				},
+				"role": {
+					"en": "Full-Stack Developer",
+					"zh": "全栈开发工程师"
+				},
+				"company": {
+					"en": "Blissbox",
+					"zh": "Blissbox"
+				},
+				"outcomes": [
+					{
+						"en": "Launched a Laravel commerce backend on Google Cloud with Stripe in **3 months**, then held **99.9% uptime**.",
+						"zh": "在**3 个月**内基于 Google Cloud 和 Stripe 上线 Laravel 电商后端，并保持**99.9% 的可用性**。"
+					}
+				],
+				"tags": [
+					{
+						"en": "Laravel",
+						"zh": "Laravel"
+					},
+					{
+						"en": "MySQL",
+						"zh": "MySQL"
+					},
+					{
+						"en": "Stripe",
+						"zh": "Stripe"
+					}
+				]
+			},
+			{
+				"period": {
+					"en": "2015 — 2017",
+					"zh": "2015 — 2017"
+				},
+				"location": {
+					"en": "Singapore",
+					"zh": "新加坡"
+				},
+				"role": {
+					"en": "Web Developer",
+					"zh": "网页开发工程师"
+				},
+				"company": {
+					"en": "WizWerx",
+					"zh": "WizWerx"
+				},
+				"outcomes": [
+					{
+						"en": "Shipped PHP-backed sites for SME clients, scoped from requirements through go-live.",
+						"zh": "为中小企业客户交付基于 PHP 的网站，从需求梳理一直到上线。"
+					}
+				],
+				"tags": []
+			}
+		]
+	},
+	"projects": {
+		"label": {
+			"en": "Projects",
+			"zh": "项目"
+		},
+		"heading": {
+			"en": "Platforms I built solo",
+			"zh": "我独立打造的平台"
+		},
+		"items": [
+			{
+				"name": "Wrapsfer",
+				"label": {
+					"en": "In development",
+					"zh": "开发中"
+				},
+				"description": {
+					"en": "A multi-tenant 3PL fulfilment and order management platform for Southeast Asia, built solo on Spring Boot 4, PostgreSQL and React. It pulls orders and pushes live stock through the Shopee, Lazada and TikTok Shop APIs, and is sized for 10,000 orders a day.",
+					"zh": "面向东南亚的多租户 3PL 履约与订单管理平台，由我独立开发，基于 Spring Boot 4、PostgreSQL 和 React。通过 Shopee、Lazada 和 TikTok Shop API 拉取订单、实时同步库存，按每天 10,000 单的规模设计。"
+				},
+				"media": {
+					"kind": "diagram",
+					"ariaLabel": {
+						"en": "Flow: orders pulled from Shopee, Lazada and TikTok Shop into Wrapsfer, live stock pushed back",
+						"zh": "流程：从 Shopee、Lazada 和 TikTok Shop 拉取订单到 Wrapsfer，再把实时库存推送回去"
+					},
+					"rows": [
+						[
+							{
+								"en": "Shopee",
+								"zh": "Shopee"
+							},
+							{
+								"en": "Lazada",
+								"zh": "Lazada"
+							},
+							{
+								"en": "TikTok Shop",
+								"zh": "TikTok Shop"
+							}
+						],
+						[
+							{
+								"en": "pull orders",
+								"zh": "拉取订单"
+							},
+							{
+								"en": "Wrapsfer",
+								"zh": "Wrapsfer",
+								"emphasis": "marker"
+							},
+							{
+								"en": "push live stock",
+								"zh": "推送库存",
+								"emphasis": "night"
+							}
+						]
+					]
+				},
+				"tags": [
+					{
+						"en": "Spring Boot",
+						"zh": "Spring Boot"
+					},
+					{
+						"en": "PostgreSQL",
+						"zh": "PostgreSQL"
+					},
+					{
+						"en": "React",
+						"zh": "React"
+					},
+					{
+						"en": "Marketplace APIs",
+						"zh": "电商平台 API"
+					},
+					{
+						"en": "Multi-tenancy",
+						"zh": "多租户"
+					}
+				]
+			},
+			{
+				"name": {
+					"en": "Full-text search for PDFs on AWS",
+					"zh": "基于 AWS 的 PDF 全文搜索"
+				},
+				"description": {
+					"en": "A production C# .NET Web API using CQRS and Onion Architecture. Extraction runs through SQS/SNS with resilient retry workers; fuzzy and faceted queries come from OpenSearch, with Cognito auth and CloudWatch observability.",
+					"zh": "采用 CQRS 和洋葱架构的生产级 C# .NET Web API。文本抽取经由 SQS/SNS 和具备重试能力的后台任务完成；模糊查询和分面查询由 OpenSearch 提供，并配有 Cognito 认证和 CloudWatch 监控。"
+				},
+				"media": {
+					"kind": "diagram",
+					"ariaLabel": {
+						"en": "Pipeline: S3 upload, Textract extraction, SQS and SNS queue, retry workers, OpenSearch index, search API",
+						"zh": "流程：S3 上传，Textract 抽取文字，SQS 与 SNS 队列，重试任务，写入 OpenSearch，搜索 API"
+					},
+					"rows": [
+						[
+							{
+								"en": "S3 upload",
+								"zh": "S3 上传"
+							},
+							{
+								"en": "Textract",
+								"zh": "Textract"
+							},
+							{
+								"en": "SQS / SNS",
+								"zh": "SQS / SNS"
+							}
+						],
+						[
+							{
+								"en": "retry workers",
+								"zh": "重试任务"
+							},
+							{
+								"en": "OpenSearch",
+								"zh": "OpenSearch",
+								"emphasis": "marker"
+							},
+							{
+								"en": "search API",
+								"zh": "搜索 API",
+								"emphasis": "night"
+							}
+						]
+					]
+				},
+				"tags": [
+					{
+						"en": "C# .NET",
+						"zh": "C# .NET"
+					},
+					{
+						"en": "CQRS",
+						"zh": "CQRS"
+					},
+					{
+						"en": "Textract",
+						"zh": "Textract"
+					},
+					{
+						"en": "OpenSearch",
+						"zh": "OpenSearch"
+					},
+					{
+						"en": "Cognito",
+						"zh": "Cognito"
+					}
+				]
+			},
+			{
+				"name": "Upmatches",
+				"label": {
+					"en": "Sold",
+					"zh": "已出售"
+				},
+				"description": {
+					"en": "Sole owner of the shared REST APIs behind the web, Android and iOS clients of a Singapore badminton platform, from service design to production support, through to its sale. The app has since been shut down.",
+					"zh": "独自负责新加坡一个羽毛球平台的共享 REST API，支撑其网页、Android 和 iOS 客户端，从服务设计到生产支持，直到产品出售。该应用现已停止运营。"
+				},
+				"media": {
+					"kind": "phones-placeholder",
+					"captions": [
+						{
+							"en": "[game list]",
+							"zh": "[球局列表]"
+						},
+						{
+							"en": "[schedule]",
+							"zh": "[日程]"
+						},
+						{
+							"en": "[attendance]",
+							"zh": "[签到]"
+						}
+					]
+				},
+				"tags": [
+					{
+						"en": "REST API",
+						"zh": "REST API"
+					},
+					{
+						"en": "Service Design",
+						"zh": "服务设计"
+					},
+					{
+						"en": "API Contracts",
+						"zh": "API 契约"
+					},
+					{
+						"en": "Data Modeling",
+						"zh": "数据建模"
+					}
+				]
+			}
+		]
+	},
+	"skills": {
+		"label": {
+			"en": "Skills & background",
+			"zh": "技能与背景"
+		},
+		"heading": {
+			"en": "What I build with",
+			"zh": "我用什么来构建"
+		},
+		"skillsTable": {
+			"columns": [
+				{
+					"en": "Skill area",
+					"zh": "领域"
+				},
+				{
+					"en": "Tools",
+					"zh": "工具"
+				}
+			],
+			"rows": [
+				{
+					"area": {
+						"en": "Languages",
+						"zh": "编程语言"
+					},
+					"tools": ["Java", "TypeScript", "Go", "C#", "Kotlin"],
+					"dailyDrivers": ["Java", "TypeScript"]
+				},
+				{
+					"area": {
+						"en": "Frameworks",
+						"zh": "框架"
+					},
+					"tools": ["Spring Boot", ".NET Core", "React", "Next.js"],
+					"dailyDrivers": ["Spring Boot"]
+				},
+				{
+					"area": {
+						"en": "Messaging & integration",
+						"zh": "消息与集成"
+					},
+					"tools": [
+						"Kafka",
+						"SQS / SNS",
+						"OAuth 2.0 / OIDC",
+						"Keycloak",
+						"Cognito",
+						"Stripe API"
+					],
+					"dailyDrivers": []
+				},
+				{
+					"area": {
+						"en": "Data & storage",
+						"zh": "数据与存储"
+					},
+					"tools": [
+						"PostgreSQL",
+						"MySQL",
+						"MongoDB",
+						"Redis",
+						"OpenSearch",
+						"S3"
+					],
+					"dailyDrivers": []
+				},
+				{
+					"area": {
+						"en": "Tools & services",
+						"zh": "工具与服务"
+					},
+					"tools": [
+						"AWS",
+						"Google Cloud",
+						"DigitalOcean",
+						"Docker",
+						"Jenkins",
+						"SonarQube",
+						"CloudWatch",
+						"Cloudflare"
+					],
+					"dailyDrivers": []
+				}
+			],
+			"key": {
+				"en": "Daily drivers at DBS",
+				"zh": "在星展银行日常使用"
+			}
+		},
+		"backgroundTable": {
+			"columns": [
+				{
+					"en": "Year",
+					"zh": "年份"
+				},
+				{
+					"en": "Type",
+					"zh": "类型"
+				},
+				{
+					"en": "Background",
+					"zh": "内容"
+				},
+				{
+					"en": "Where",
+					"zh": "地点"
+				}
+			],
+			"rows": [
+				{
+					"year": "2019",
+					"type": {
+						"en": "Award",
+						"zh": "奖项"
+					},
+					"kind": "award",
+					"title": {
+						"en": "DBS Recognition for Outstanding Performance",
+						"zh": "星展银行杰出表现表彰"
+					},
+					"titleUrl": "https://www.dbs.com/NewsPrinter.page?newsId=k0u62hn2&locale=en",
+					"detail": {
+						"en": ", Paradigm Shift Global Hackathon (Team 1206)",
+						"zh": "，Paradigm Shift 全球黑客松（1206 队）"
+					},
+					"where": {
+						"en": "DBS Bank",
+						"zh": "星展银行"
+					}
+				},
+				{
+					"year": "2012 — 2014",
+					"type": {
+						"en": "Education",
+						"zh": "教育"
+					},
+					"kind": "education",
+					"title": {
+						"en": "B.S. in Information Technology, Campbell University",
+						"zh": "坎贝尔大学 信息技术理学学士"
+					},
+					"where": {
+						"en": "North Carolina",
+						"zh": "北卡罗来纳州"
+					}
+				},
+				{
+					"year": "2012 — 2014",
+					"type": {
+						"en": "Education",
+						"zh": "教育"
+					},
+					"kind": "education",
+					"title": {
+						"en": "Advanced Diploma in Internet Technology cum BS Degree, Tunku Abdul Rahman University College",
+						"zh": "拉曼大学学院 互联网技术高级文凭（衔接学士学位）"
+					},
+					"where": {
+						"en": "Malaysia",
+						"zh": "马来西亚"
+					}
+				}
+			]
+		}
+	},
+	"contact": {
+		"label": {
+			"en": "Contact",
+			"zh": "联系"
+		},
+		"heading": {
+			"lead": {
+				"en": "Let's talk ",
+				"zh": "聊聊"
+			},
+			"mark": {
+				"en": "backends",
+				"zh": "后端"
+			},
+			"tail": {
+				"en": ".",
+				"zh": "吧。"
+			}
+		},
+		"intro": {
+			"en": "Open to backend and platform roles, and to API work that has to hold up in production. I reply to everything.",
+			"zh": "我正在寻找后端和平台工程职位，也乐意承接需要经得起生产考验的 API 项目。每条消息我都会回复。"
+		},
+		"fields": {
+			"name": {
+				"en": "Name",
+				"zh": "姓名"
+			},
+			"email": {
+				"en": "Email",
+				"zh": "邮箱"
+			},
+			"message": {
+				"en": "Message",
+				"zh": "留言"
+			}
+		},
+		"submit": {
+			"en": "Send message",
+			"zh": "发送"
+		}
+	},
+	"linkColumn": {
+		"sections": [
+			{
+				"en": "About",
+				"zh": "关于"
+			},
+			{
+				"en": "Experience",
+				"zh": "经历"
+			},
+			{
+				"en": "Projects",
+				"zh": "项目"
+			},
+			{
+				"en": "Skills",
+				"zh": "技能"
+			},
+			{
+				"en": "Contact",
+				"zh": "联系"
+			}
+		],
+		"elsewhere": [
+			{
+				"label": {
+					"en": "Writing",
+					"zh": "写作"
+				},
+				"href": {
+					"en": "/writing",
+					"zh": "/zh/writing"
+				},
+				"glyph": "→"
+			},
+			{
+				"label": {
+					"en": "Resume",
+					"zh": "简历"
+				},
+				"href": {
+					"en": "/resume",
+					"zh": "/zh/resume"
+				},
+				"glyph": "→"
+			},
+			{
+				"label": {
+					"en": "GitHub",
+					"zh": "GitHub"
+				},
+				"href": "https://github.com/weehong",
+				"glyph": "↗"
+			},
+			{
+				"label": {
+					"en": "LinkedIn",
+					"zh": "LinkedIn"
+				},
+				"href": "https://sg.linkedin.com/in/vernonweehong",
+				"glyph": "↗"
+			}
+		]
+	}
+}
