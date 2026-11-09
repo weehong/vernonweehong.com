@@ -1,0 +1,479 @@
+@import "tailwindcss";
+
+/*
+ * Vernon KOH — "the reviewed spec" — Tailwind CSS v4 theme.
+ *
+ * This file is the single source of truth for every colour, font, type size,
+ * radius, shadow and pattern on the site. It replaces everything in
+ * app/globals.css except the print rules for /resume.
+ *
+ * How to use it:
+ *   app/globals.css =
+ *     @import "tailwindcss";
+ *     <the contents of this file, unchanged>
+ *     <the existing @page / @media print block for /resume, unchanged>
+ *
+ * Rules (see docs/design/README.md):
+ *   - Components use ONLY the utilities these tokens generate
+ *     (bg-paper, text-ink, bg-marker, font-display, text-heading, rounded-md…).
+ *   - No hex, rgb() or named colour anywhere in a component. No arbitrary
+ *     colour values like bg-[#123456]. If a colour is missing, add a token here.
+ *   - No pure-black backgrounds. ink / marker-ink are text colours only.
+ *   - Dark mode is the .dark class on <html> (set by the theme script in
+ *     app/layout.tsx before paint). Use the dark: variant only where a token
+ *     cannot express the difference; almost every token already swaps itself.
+ */
+
+/* ---------------------------------------------------------------- variants */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------ colour values (raw) */
+/* Raw values live here and swap by theme. Components never use these names
+   directly; they use the --color-* utilities defined in @theme below. */
+
+:root {
+	color-scheme: light;
+
+	/* grounds */
+	--paper: #f4f5f2; /* page background: cool off-white, never cream */
+	--raised: #ffffff; /* cards, fields, tables */
+	--sunken: #eaece7; /* tags-on-paper, code, quiet notes, media placeholders */
+
+	/* text */
+	--ink: #12161c; /* headings, primary text — 16.6:1 on paper */
+	--ink-soft: #3f4751; /* body text — 8.6:1 */
+	--ink-muted: #626a74; /* dates, labels, idle nav — 5.0:1 on paper, 4.6:1 on sunken */
+
+	/* lines */
+	--rule: #d5d8d2; /* hairlines, card borders (decorative only) */
+	--rule-strong: #12161c; /* 2px rule under section labels */
+	--field-line: #8a929b; /* control borders — 3.1:1 on raised */
+
+	/* the highlighter — a FILL behind marker-ink text, never a text colour */
+	--marker: #ffd84d;
+	--marker-ink: #12161c; /* same in both themes — 13.1:1 on marker */
+
+	/* night — the one dark fill: deep slate in light, near-white in dark */
+	--night: #24303f;
+	--on-night: #f4f5f2; /* text on night — 12.2:1 */
+	--on-night-soft: #b9bfc6; /* secondary text on night — 7.2:1 */
+	--night-line: rgb(244 245 242 / 0.32); /* field borders on night */
+
+	/* states */
+	--focus: #2f5bea; /* keyboard focus ring only — 5.0:1 */
+	--signal: #17734f; /* available / success — 5.3:1 on paper, 4.9:1 on signal-bg */
+	--signal-bg: #ddf0e6;
+	--danger: #b42318; /* errors — 6.0:1 */
+	--warn: #a15c00; /* Warning callout icon and bar — 5.2:1 on raised */
+
+	/* dot patterns (decorative) */
+	--dots-on-marker: rgb(18 22 28 / 0.22);
+	--dots-on-night: rgb(244 245 242 / 0.2);
+	--dots-on-sunken: #8a929b; /* hero profile panel */
+	--dots-subtle: #c3c7c0; /* diagram panel */
+
+	/* code highlighting (CodeBlock), all on raised: deep inks on white */
+	--code-text: #12161c; /* plain code — 18.1:1 */
+	--code-keyword: #2f5bea; /* 5.5:1 */
+	--code-type: #17734f; /* 5.8:1 */
+	--code-string: #a6400c; /* 6.2:1 */
+	--code-number: #8a3fb8; /* numbers, true/false/null — 6.0:1 */
+	--code-function: #0b6780; /* 6.4:1 */
+	--code-tag: #b11f55; /* JSX/HTML tags — 6.6:1 */
+	--code-attr: #855800; /* attributes — 6.2:1 */
+
+	/* language-dependent type settings (overridden for Chinese below) */
+	--stack-sans: var(--font-geist), system-ui, sans-serif;
+	--stack-display: var(--font-bricolage), var(--font-geist), sans-serif;
+	--stack-mono: var(--font-geist-mono), ui-monospace, monospace;
+	--track-display: -0.045em;
+	--track-heading: -0.03em;
+	--track-title: -0.02em;
+	--track-label: 0.08em;
+	--weight-display: 800;
+	--lh-display: 0.92;
+	--lh-heading: 1.04;
+	--lh-title: 1.2;
+	--lh-body: 1.65;
+	--lh-prose: 1.75;
+}
+
+.dark {
+	color-scheme: dark;
+
+	--paper: #1c2128; /* soft charcoal-slate, never black */
+	--raised: #242a33;
+	--sunken: #2b323c;
+
+	--ink: #eeefec; /* 14.0:1 on paper */
+	--ink-soft: #b9bfc6; /* 8.7:1 */
+	--ink-muted: #9aa2ab; /* 6.3:1 on paper, 5.0:1 on sunken */
+
+	--rule: #38404b;
+	--rule-strong: #eeefec;
+	--field-line: #6b7480; /* 3.4:1 on paper, 3.1:1 on raised */
+
+	--marker: #f5cf45;
+	--marker-ink: #12161c; /* 12.0:1 */
+
+	--night: #eeefec; /* inverted: the "dark" block is near-white in dark mode */
+	--on-night: #1c2128; /* 14.0:1 */
+	--on-night-soft: #3f4751; /* 8.2:1 */
+	--night-line: rgb(18 22 28 / 0.36);
+
+	--focus: #7c9bff; /* 6.2:1 */
+	--signal: #5cc99a; /* 7.9:1 */
+	--signal-bg: rgb(92 201 154 / 0.14);
+	--danger: #ff8a80; /* 7.1:1 */
+	--warn: #f0b860; /* 8.1:1 on raised */
+
+	--dots-on-marker: rgb(18 22 28 / 0.22);
+	--dots-on-night: rgb(28 33 40 / 0.22);
+	--dots-on-sunken: #6b7480;
+	--dots-subtle: #454e5a;
+
+	/* code highlighting: softer editor pastels on slate raised (#242a33) */
+	--code-text: #d7dbe0; /* plain code, a touch softer than ink — 10.4:1 */
+	--code-keyword: #8fa8ff; /* 6.3:1 */
+	--code-type: #6fd3a8; /* 7.9:1 */
+	--code-string: #f2b27e; /* 7.9:1 */
+	--code-number: #d3a8ff; /* 7.4:1 */
+	--code-function: #6ccbe3; /* 7.8:1 */
+	--code-tag: #ff8fab; /* 6.7:1 */
+	--code-attr: #e8c66e; /* 8.8:1 */
+}
+
+/* Chinese edition: Noto Sans SC first, no negative tracking, roomier lines,
+   heavier display weight (CJK has no 800 italic-style contrast). */
+:root:lang(zh-Hans),
+:lang(zh-Hans) {
+	--stack-sans: var(--font-noto-sc), var(--font-geist), system-ui, sans-serif;
+	--stack-display: var(--font-bricolage), var(--font-noto-sc), sans-serif;
+	--stack-mono: var(--font-geist-mono), var(--font-noto-sc), monospace;
+	--track-display: 0em;
+	--track-heading: 0em;
+	--track-title: 0em;
+	--track-label: 0.04em;
+	--weight-display: 900;
+	--lh-display: 1.12;
+	--lh-heading: 1.25;
+	--lh-title: 1.4;
+	--lh-body: 1.8;
+	--lh-prose: 1.9;
+}
+
+/* ------------------------------------------------------------ theme tokens */
+
+/* 1. Remove Tailwind's defaults so only this system's values exist. */
+@theme {
+	--color-*: initial;
+	--radius-*: initial;
+	--shadow-*: initial;
+}
+
+/* 2. Tokens. `inline` so every utility resolves its variable on the element
+   it is used on: the light/dark and English/Chinese overrides above then apply
+   wherever they are set. */
+@theme inline {
+	--color-transparent: transparent;
+	--color-current: currentColor;
+
+	/* colours → bg-*, text-*, border-*, outline-*, fill-*, stroke-* */
+	--color-paper: var(--paper);
+	--color-raised: var(--raised);
+	--color-sunken: var(--sunken);
+	--color-ink: var(--ink);
+	--color-ink-soft: var(--ink-soft);
+	--color-ink-muted: var(--ink-muted);
+	--color-rule: var(--rule);
+	--color-rule-strong: var(--rule-strong);
+	--color-field-line: var(--field-line);
+	--color-marker: var(--marker);
+	--color-marker-ink: var(--marker-ink);
+	--color-night: var(--night);
+	--color-on-night: var(--on-night);
+	--color-on-night-soft: var(--on-night-soft);
+	--color-night-line: var(--night-line);
+	--color-focus: var(--focus);
+	--color-signal: var(--signal);
+	--color-signal-bg: var(--signal-bg);
+	--color-danger: var(--danger);
+	--color-warn: var(--warn);
+	--color-code-text: var(--code-text);
+	--color-code-keyword: var(--code-keyword);
+	--color-code-type: var(--code-type);
+	--color-code-string: var(--code-string);
+	--color-code-number: var(--code-number);
+	--color-code-function: var(--code-function);
+	--color-code-tag: var(--code-tag);
+	--color-code-attr: var(--code-attr);
+
+	/* fonts → font-sans, font-display, font-mono */
+	--font-sans: var(--stack-sans);
+	--font-display: var(--stack-display);
+	--font-mono: var(--stack-mono);
+
+	/* letter-spacing → tracking-display, tracking-heading, tracking-title, tracking-label */
+	--tracking-display: var(--track-display);
+	--tracking-heading: var(--track-heading);
+	--tracking-title: var(--track-title);
+	--tracking-label: var(--track-label);
+
+	/* type scale → text-* (each sets size, line-height, tracking, weight) */
+	--text-display-xl: clamp(4rem, 11vw, 9rem); /* 64–144px: homepage name */
+	--text-display-xl--line-height: 0.86;
+	--text-display-xl--letter-spacing: var(--track-display);
+	--text-display-xl--font-weight: var(--weight-display);
+
+	--text-display-lg: clamp(2.75rem, 6vw, 5.25rem); /* 44–84px: Writing h1 */
+	--text-display-lg--line-height: var(--lh-display);
+	--text-display-lg--letter-spacing: var(--track-display);
+	--text-display-lg--font-weight: var(--weight-display);
+
+	--text-display-md: clamp(
+		2.5rem,
+		5.2vw,
+		4rem
+	); /* 40–64px: post h1, contact h2 */
+	--text-display-md--line-height: var(--lh-display);
+	--text-display-md--letter-spacing: var(--track-display);
+	--text-display-md--font-weight: var(--weight-display);
+
+	--text-statement: clamp(1.75rem, 3.2vw, 2.5rem); /* 28–40px: hero statement */
+	--text-statement--line-height: 1.12;
+	--text-statement--letter-spacing: var(--track-title);
+	--text-statement--font-weight: 600;
+
+	--text-heading: clamp(2rem, 4vw, 3.25rem); /* 32–52px: section h2 */
+	--text-heading--line-height: var(--lh-heading);
+	--text-heading--letter-spacing: var(--track-heading);
+	--text-heading--font-weight: 700;
+
+	--text-title-lg: 2.5rem; /* 40px: featured post title */
+	--text-title-lg--line-height: 1.02;
+	--text-title-lg--letter-spacing: var(--track-heading);
+	--text-title-lg--font-weight: var(--weight-display);
+
+	--text-title: 2rem; /* 32px: project card h3, post h2, subscribe h2 */
+	--text-title--line-height: 1.15;
+	--text-title--letter-spacing: var(--track-title);
+	--text-title--font-weight: 700;
+
+	--text-title-md: 1.625rem; /* 26px: entry h3, related card title */
+	--text-title-md--line-height: var(--lh-title);
+	--text-title-md--letter-spacing: var(--track-title);
+	--text-title-md--font-weight: 700;
+
+	--text-title-sm: 1.5rem; /* 24px: archive row title, empty state */
+	--text-title-sm--line-height: var(--lh-title);
+	--text-title-sm--letter-spacing: var(--track-title);
+	--text-title-sm--font-weight: 700;
+
+	--text-numeral-xl: 10.5rem; /* 168px: featured "06" */
+	--text-numeral-xl--line-height: 0.8;
+	--text-numeral-xl--letter-spacing: -0.06em;
+	--text-numeral-xl--font-weight: 800;
+
+	--text-numeral-lg: 4.5rem; /* 72px: year in separator */
+	--text-numeral-lg--line-height: 0.85;
+	--text-numeral-lg--letter-spacing: -0.05em;
+	--text-numeral-lg--font-weight: 800;
+
+	--text-numeral: 2.75rem; /* 44px: archive row number, count chips */
+	--text-numeral--line-height: 0.9;
+	--text-numeral--letter-spacing: -0.05em;
+	--text-numeral--font-weight: 800;
+
+	--text-lead: 1.25rem; /* 20px */
+	--text-lead--line-height: 1.55;
+	--text-prose: 1.0625rem; /* 17px: post body */
+	--text-prose--line-height: var(--lh-prose);
+	--text-body: 1rem; /* 16px */
+	--text-body--line-height: var(--lh-body);
+	--text-body-sm: 0.9375rem; /* 15px: buttons, card text, nav */
+	--text-body-sm--line-height: 1.6;
+	--text-small: 0.875rem; /* 14px */
+	--text-small--line-height: 1.55;
+	--text-meta: 0.8125rem; /* 13px mono: dates, counts */
+	--text-meta--line-height: 1.4;
+	--text-label: 0.75rem; /* 12px mono uppercase: section labels */
+	--text-label--line-height: 1.4;
+	--text-label--letter-spacing: var(--track-label);
+	--text-label--font-weight: 500;
+	--text-code: 0.875rem; /* 14px mono */
+	--text-code--line-height: 1.7;
+
+	/* radius → rounded-xs/sm/md/pill */
+	--radius-xs: 3px; /* tags, chips, highlights, § markers, inline code */
+	--radius-sm: 6px; /* buttons, fields, nav items */
+	--radius-md: 10px; /* cards, panels, blocks */
+	--radius-pill: 9999px; /* availability badge and dots only */
+
+	/* shadows → shadow-lift, shadow-offset */
+	--shadow-lift: 0 1px 0 rgb(18 22 28 / 0.08), 0 8px 24px rgb(18 22 28 / 0.08);
+	--shadow-offset: 4px 4px 0 var(--marker); /* search box only */
+
+	/* widths → max-w-page, max-w-measure */
+	--container-page: 80rem; /* 1280px site container */
+	--container-measure: 65ch; /* any other paragraph */
+
+	/* motion → ease-out */
+	--ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* 3. Animation (the one orchestrated moment: the hero highlight draws in). */
+@theme {
+	--animate-mark-draw: mark-draw 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+	@keyframes mark-draw {
+		from {
+			background-size: 0% 100%;
+		}
+		to {
+			background-size: 100% 100%;
+		}
+	}
+}
+
+/* -------------------------------------------------------- custom utilities */
+
+/* Dot grid backgrounds. Pair with the matching fill:
+   bg-marker dots-on-marker · bg-night dots-on-night · bg-sunken dots-on-sunken · bg-sunken dots-subtle */
+@utility dots-on-marker {
+	background-image: radial-gradient(
+		var(--dots-on-marker) 1.2px,
+		transparent 1.6px
+	);
+	background-size: 16px 16px;
+}
+@utility dots-on-night {
+	background-image: radial-gradient(
+		var(--dots-on-night) 1.2px,
+		transparent 1.6px
+	);
+	background-size: 16px 16px;
+}
+@utility dots-on-sunken {
+	background-image: radial-gradient(
+		var(--dots-on-sunken) 1.2px,
+		transparent 1.6px
+	);
+	background-size: 16px 16px;
+}
+@utility dots-subtle {
+	background-image: radial-gradient(
+		var(--dots-subtle) 1.2px,
+		transparent 1.6px
+	);
+	background-size: 16px 16px;
+}
+
+/* The page gutter: 24px, dropped on the left once the 1280px container has
+   room to centre (viewport ≥ 1328px), so the link column meets the content edge. */
+@utility page-gutter {
+	padding-right: 24px;
+	padding-left: clamp(0px, calc((1328px - 100vw) * 100), 24px);
+}
+
+/* A collapsed code block (CodeBlock): the pre's top padding plus 20 lines. */
+@utility max-h-code-preview {
+	max-height: calc(1rem + 20lh);
+}
+
+/* The highlighter: a marker box behind a word or phrase. Use on <mark>. */
+@utility highlight {
+	padding-inline: 0.12em;
+	border-radius: var(--radius-xs);
+	background-image: linear-gradient(var(--marker), var(--marker));
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: var(--marker-ink);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+/* ---------------------------------------------------------------- base */
+
+@layer base {
+	html {
+		background-color: var(--paper);
+		scroll-behavior: smooth;
+		/* Set by the sticky SearchBar (Writing index); 0 elsewhere. */
+		scroll-padding-top: var(--sticky-top, 0px);
+	}
+	body {
+		background-color: var(--paper);
+		color: var(--ink);
+		font-family: var(--stack-sans);
+		font-size: 1rem;
+		line-height: var(--lh-body);
+		-webkit-font-smoothing: antialiased;
+	}
+	h1,
+	h2,
+	h3 {
+		text-wrap: balance;
+	}
+	:focus-visible {
+		outline: 2px solid var(--focus);
+		outline-offset: 2px;
+	}
+	::selection {
+		background-color: var(--marker);
+		color: var(--marker-ink);
+	}
+	mark {
+		background-color: transparent;
+		color: inherit;
+	}
+	/* SiteMenu: the page behind the open sheet does not scroll. */
+	:root:has(dialog:modal) {
+		overflow: hidden;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+}
+
+/* ------------------------------------------------------------ resume print */
+/* From docs/design/pages.md (Resume). Print is ink on white paper, the one
+   place pure black is allowed: it is not a background. */
+
+@page {
+	size: A4;
+	margin: 0;
+}
+
+@media print {
+	:root,
+	.dark {
+		--paper: #ffffff;
+		--raised: #ffffff;
+		--sunken: #ffffff;
+		--ink: #000000;
+		--ink-soft: #222222;
+		--ink-muted: #444444;
+		--rule: #cccccc;
+		--rule-strong: #000000;
+		--marker: transparent;
+		--marker-ink: #000000;
+		--night: #ffffff;
+		--on-night: #000000;
+		--track-display: 0em; /* negative tracking breaks PDF text extraction */
+	}
+	html,
+	body {
+		font-size: 9.5pt;
+		line-height: 1.4;
+	}
+}
