@@ -1,0 +1,83 @@
+---
+title: "Most of a developer's time isn't spent coding"
+highlight: "isn't spent coding"
+summary: "What years at DBS have taught me: most of the job is understanding the context, piecing together data and requirements, and preparing ahead. Code is only one part of it."
+standfirst: "A note to my future self, to reread before every new project."
+topic: reflections
+publishedOn: 2026-11-09
+status: published
+---
+
+After this long at DBS, I've noticed something: writing code matters, but it takes up a much smaller share of the job than you might think. I'm writing this down so I can come back to it whenever I start a new project.
+
+What the job really needs, most of the time, is context: an understanding of the whole story behind the work.
+
+## First, understand what problem it solves
+
+When a colleague or a client brings you a requirement, the first thing to understand isn't what code to write. It's the context: what is this requirement for? What problem is it meant to solve?
+
+## Then, work out how to complete the puzzle
+
+Once you understand that, the real work begins: how will you help them solve the problem?
+
+- Where do you find the data you need?
+- Which department should you contact?
+- Which department do you get this data from?
+- How should the whole thing move forward?
+
+Much of the time, you aren't writing code at all. You're piecing together data and requirements. Someone gives you a goal, and you have to find the pieces scattered around and fit them into one complete puzzle that makes the goal possible.
+
+That's why context matters so much. You need to know the background and what you're doing before you can deliver it well.
+
+## Also, work out what to prepare ahead
+
+Understanding the context isn't only about knowing where to get the data. It also shows you what you need to prepare in advance.
+
+We ran into exactly this. At first, we thought we only needed our own database to store the data, plus a few APIs from different departments, and that would be the end of it.
+
+But we missed a lot:
+
+- the design might need Kafka, a message broker;
+- there might be backend problems to solve;
+- we had to request some internal infrastructure services;
+- we had to apply for special access to read the logs after deployment;
+- and all sorts of other small things.
+
+Test data is the same. Where do the test users come from? If the system has several permission levels, you need a test account for each level, ready in advance.
+
+None of this is writing code, yet all of it has to be in place before the work can be done.
+
+## Knowing how other departments work is a bonus
+
+If you understand, even roughly, how other departments operate, the work goes much more smoothly, and you'll feel sure of whatever you need to do.
+
+## Same data, different names
+
+We usually know what the data should look like in the end. But the same field might be called `username` on our side and `profile name` on another. In a third department, it might have a name specific to their own system, and in yet another, it might be `business name`.
+
+This was a huge problem for us. We spent a lot of time understanding and aligning what each name actually maps to on our side.
+
+It matters a great deal, because the data we show has to be 100% correct.
+
+And when something goes wrong in production, we can tell the other side with confidence: "We've checked this. It isn't our problem." That gives our team, and each of us, solid ground to stand on.
+
+## Only writing code is a fatal weakness
+
+I've noticed that some developers are excellent at writing code but don't want to join meetings or understand the requirements. What they build may be wrong, or may miss the goal.
+
+In meetings, they often can't answer anything. They know what they wrote, but not the story behind it. So when the product owner or the business analyst asks a question, they have no answer.
+
+That is a fatal weakness.
+
+## Closing thoughts
+
+All in all, most of my time goes into understanding requirements, piecing together data, aligning field names and preparing everything else. That's what it takes to really finish a task. Writing code matters, but it has to rest on an understanding of the context.
+
+## Before the next project, ask myself
+
+- What is this requirement for? What problem does it solve?
+- Where is the data I need? Which department do I contact, and who do I ask?
+- How do the departments involved work?
+- Besides the database and APIs, what else do I need? Infrastructure services, access, test accounts…
+- What is the same field called in each department? Does each name mean the same thing?
+- If the product owner or the business analyst asked me right now, could I answer?
